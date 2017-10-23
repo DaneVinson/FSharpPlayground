@@ -6,11 +6,12 @@ namespace Domain.Model
     {
         public int Id { get; set; }
         public string Name { get; set; }
+        public string Source { get; set; }
         public string Type { get; set; }
 
         public override string ToString()
         {
-            return $"{Name} ({Type}, {Id})";
+            return $"{Name} ({Type} from {Source}, {Id})";
         }
     }
 }

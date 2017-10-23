@@ -34,6 +34,7 @@
 
   <ItemGroup>
     <Compile Include="Models\*.fs" />
+    <Compile Include="HttpActions.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 

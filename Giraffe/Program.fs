@@ -14,24 +14,24 @@ open Giraffe.Middleware
 open Giraffe.Razor.HttpHandlers
 open Giraffe.Razor.Middleware
 open Giraffe.Tasks
-
+open Giraffe1.HttpActions
 open Domain.Model
 open Giraffe1.Models
 
-let postMessage =
-    fun (next : HttpFunc) (ctx : HttpContext) ->
-        task {
-            let! message = ctx.BindJson<Message>()
-            return! text "Message posted!" next ctx
-        }
+// let postMessage =
+//     fun (next : HttpFunc) (ctx : HttpContext) ->
+//         task {
+//             let! message = ctx.BindJson<Message>()
+//             return! text "Message posted!" next ctx
+//         }
 
-let postWeapon =
-    fun (next : HttpFunc) (ctx : HttpContext) ->
-        task {
-            let! weapon = ctx.BindJson<Weapon>()
-            let message = String.Format("Posted weapon {0}", weapon.Name);
-            return! text message next ctx
-        }
+// let postWeapon =
+//     fun (next : HttpFunc) (ctx : HttpContext) ->
+//         task {
+//             let! weapon = ctx.BindJson<Weapon>()
+//             let message = String.Format("Posted weapon {0}", weapon.Name);
+//             return! text message next ctx
+//         }
 
 // Web app
 let webApp =
